@@ -9,6 +9,7 @@
 import Foundation
 
 enum EmployeeType {
+    
     case exempt
     case nonExempt
     case partTime

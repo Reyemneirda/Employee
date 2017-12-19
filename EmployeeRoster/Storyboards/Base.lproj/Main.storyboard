@@ -117,13 +117,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEn-DG-qui">
                                                     <rect key="frame" x="16" y="12" width="343" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-hG-W2V">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-hG-W2V">
                                                             <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please Enter DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-3x-Sdd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-3x-Sdd">
                                                             <rect key="frame" x="236" y="0.0" width="107" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,12 +139,37 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KPV-fE-kAs">
+                                        <rect key="frame" x="0.0" y="123" width="375" height="182"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" tableViewCell="KPV-fE-kAs" id="1rs-mo-kHi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rEi-vJ-TLD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="535377495.88733602">
+                                                        <!--2017-12-19 11:58:15 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged:" destination="1f4-k3-GeK" eventType="valueChanged" id="s84-VO-QTN"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="rEi-vJ-TLD" secondAttribute="trailing" id="L9J-E2-bWJ"/>
+                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="top" secondItem="1rs-mo-kHi" secondAttribute="top" id="M5Y-2a-ED2"/>
+                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="leading" secondItem="1rs-mo-kHi" secondAttribute="leading" id="bRW-ce-dNT"/>
+                                                <constraint firstAttribute="bottom" secondItem="rEi-vJ-TLD" secondAttribute="bottom" constant="-0.5" id="wbM-dD-WNM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="aDF-tK-lSx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="u3K-uz-UjH">
-                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="341" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3K-uz-UjH" id="6dm-Hg-fuN">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -153,13 +178,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idN-zD-aZc">
                                                     <rect key="frame" x="16" y="11" width="317" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Employee Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9t-gC-fwb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Employee Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9t-gC-fwb">
                                                             <rect key="frame" x="0.0" y="0.0" width="139.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please Select Employee Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-9e-v2j">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Employee Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-9e-v2j">
                                                             <rect key="frame" x="139.5" y="0.0" width="177.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,6 +221,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datepickerCell" destination="KPV-fE-kAs" id="qmS-w6-IoC"/>
+                        <outlet property="dobDatePicker" destination="rEi-vJ-TLD" id="WQg-cg-fWY"/>
                         <outlet property="dobLabel" destination="eDi-3x-Sdd" id="hKH-oX-57e"/>
                         <outlet property="employeeTypeLabel" destination="cPh-9e-v2j" id="hj4-eQ-B8k"/>
                         <outlet property="nameTextField" destination="zjD-iz-eCp" id="ZRi-HR-sx5"/>
@@ -205,7 +232,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pz-Jj-qkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KvK-va-bCl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-188"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="-188.45577211394306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i7L-VO-J1s">

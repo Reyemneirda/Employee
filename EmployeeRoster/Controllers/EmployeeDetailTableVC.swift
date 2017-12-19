@@ -14,9 +14,11 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         static let unwindToListIndentifier = "UnwindToListSegue"
     }
     
+    @IBOutlet weak var dobDatePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dobLabel: UILabel!
     @IBOutlet weak var employeeTypeLabel: UILabel!
+    @IBOutlet weak var datepickerCell: UITableViewCell!
     
     var employee: Employee?
     
@@ -25,7 +27,32 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
 
         updateView()
     }
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter.string(from: date)
+    }
     
+    @IBAction func datePickerValueChanged(_ sender: Any) {
+        
+        dobLabel.text = formatDate(date: dobDatePicker.date)
+    }
+    
+    
+    
+    var isEditingBirthday: Bool = false {
+        didSet {
+            datepickerCell.isHidden = !isEditingBirthday
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+      
+    }
+
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        <#code#>
+    }
     func updateView() {
         if let employee = employee {
             navigationItem.title = employee.name
