@@ -16,6 +16,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     let dobRow = 1
     let dobPickerRow = 2
+    let defaultRowHeight = 44
     
     @IBOutlet weak var dobDatePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
@@ -61,8 +62,14 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        <#code#>
+        
+        guard indexPath.row == dobPickerRow else {return CGFloat(defaultRowHeight)}
+        if isEditingBirthday {
+            return dobDatePicker.frame.height
+        }
+        return 0
     }
+    
     func updateView() {
         if let employee = employee {
             navigationItem.title = employee.name
