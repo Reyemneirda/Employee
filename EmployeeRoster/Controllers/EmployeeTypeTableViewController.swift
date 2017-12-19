@@ -55,16 +55,9 @@ class EmployeeTypeTableViewController: UITableViewController
         tableView.reloadData()
     }
     
+
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "selectEmployeeType" {
-            let destinationViewController = segue.destination as? EmployeeTypeTableViewController
-            
-            destinationViewController?.delegate = self as? EmployeeTypeTableViewControllerDelegate
-            destinationViewController?.employeeType = employeeType
-        }
-        
-        
-    }
+    
+
 
 }

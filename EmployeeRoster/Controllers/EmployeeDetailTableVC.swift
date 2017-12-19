@@ -8,11 +8,28 @@
 
 import UIKit
 
-class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
+class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, EmployeeTypeTableViewControllerDelegate {
+    
+    func didSelectEmployeeType(employeeType: EmployeeType) {
+        self.employeeType = employeeType
+        updateType()
+    }
+    
   
+    
     
     struct PropertyKeys {
         static let unwindToListIndentifier = "UnwindToListSegue"
+    }
+    
+    var employeeType: EmployeeType?
+    
+    func updateType() {
+        if let employeeType = employeeType {
+            employeeTypeLabel.text = employeeType.description()
+        } else {
+            employeeTypeLabel.text = "Not Set"
+        }
     }
     
     let dobRow = 1
@@ -29,7 +46,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateType()
         updateView()
     }
     
@@ -81,7 +98,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
             dateFormatter.dateStyle = .medium
             dobLabel.text = dateFormatter.string(from: employee.dateOfBirth)
             dobLabel.textColor = .black
-            employeeTypeLabel.text = employee.employeeType.description()
+            updateType()
             employeeTypeLabel.textColor = .black
         } else {
             navigationItem.title = "New Employee"
@@ -106,7 +123,18 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         return false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectEmployeeType"
+        {
+            let destinationViewController = segue.destination as? EmployeeTypeTableViewController
+            
+            destinationViewController?.delegate = self as? EmployeeTypeTableViewControllerDelegate
+            destinationViewController?.employeeType = employeeType
+        }
         
+        
+    }
+    
         
     }
 
