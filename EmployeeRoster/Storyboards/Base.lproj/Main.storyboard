@@ -157,10 +157,10 @@
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="rEi-vJ-TLD" secondAttribute="trailing" id="L9J-E2-bWJ"/>
-                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="top" secondItem="1rs-mo-kHi" secondAttribute="top" id="M5Y-2a-ED2"/>
-                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="leading" secondItem="1rs-mo-kHi" secondAttribute="leading" id="bRW-ce-dNT"/>
-                                                <constraint firstAttribute="bottom" secondItem="rEi-vJ-TLD" secondAttribute="bottom" constant="-0.5" id="wbM-dD-WNM"/>
+                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="leading" secondItem="1rs-mo-kHi" secondAttribute="leading" id="BGB-hq-L4E"/>
+                                                <constraint firstAttribute="bottom" secondItem="rEi-vJ-TLD" secondAttribute="bottom" id="VGO-we-05M"/>
+                                                <constraint firstItem="rEi-vJ-TLD" firstAttribute="top" secondItem="1rs-mo-kHi" secondAttribute="top" id="mmf-5c-VhE"/>
+                                                <constraint firstAttribute="trailing" secondItem="rEi-vJ-TLD" secondAttribute="trailing" id="vd6-Hg-lva"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

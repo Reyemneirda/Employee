@@ -16,7 +16,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     let dobRow = 1
     let dobPickerRow = 2
-    let defaultRowHeight = 44
+    let defaultRowHeight: CGFloat = 44
     
     @IBOutlet weak var dobDatePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
@@ -31,6 +31,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
 
         updateView()
     }
+    
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -46,7 +47,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     var isEditingBirthday: Bool = false {
         didSet {
-            datepickerCell.isHidden = !isEditingBirthday
+            dobDatePicker.isHidden = !isEditingBirthday
             tableView.beginUpdates()
             tableView.endUpdates()
         }
@@ -63,7 +64,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        guard indexPath.row == dobPickerRow else {return CGFloat(defaultRowHeight)}
+        guard indexPath.row == dobPickerRow else {return defaultRowHeight}
         if isEditingBirthday {
             return dobDatePicker.frame.height
         }
