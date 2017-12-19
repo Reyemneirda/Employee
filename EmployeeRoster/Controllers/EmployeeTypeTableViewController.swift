@@ -36,10 +36,13 @@ class EmployeeTypeTableViewController: UITableViewController
         
         cell.textLabel?.text = employeeTypes.description()
         
-        if employeeType == self.employeeType {
+        if employeeTypes == employeeType {
+            
             cell.accessoryType = .checkmark
         } else {
+            
             cell.accessoryType = .none
+            
         }
         
         return cell
