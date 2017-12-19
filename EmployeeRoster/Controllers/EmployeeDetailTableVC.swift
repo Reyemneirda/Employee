@@ -14,6 +14,9 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         static let unwindToListIndentifier = "UnwindToListSegue"
     }
     
+    let dobRow = 1
+    let dobPickerRow = 2
+    
     @IBOutlet weak var dobDatePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dobLabel: UILabel!
@@ -48,7 +51,14 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
       
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row == dobRow else {return}
+        isEditingBirthday = !isEditingBirthday
+        dobLabel.textColor = .black
+        dobLabel.text = formatDate(date: dobDatePicker.date)
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         <#code#>
