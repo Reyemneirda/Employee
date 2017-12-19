@@ -48,8 +48,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     var isEditingBirthday: Bool = false {
         didSet {
             dobDatePicker.isHidden = !isEditingBirthday
-            tableView.beginUpdates()
-            tableView.endUpdates()
+ 
         }
       
     }
@@ -60,6 +59,8 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         isEditingBirthday = !isEditingBirthday
         dobLabel.textColor = .black
         dobLabel.text = formatDate(date: dobDatePicker.date)
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -88,7 +89,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let name = nameTextField.text {
-            employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
+            employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
             performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
         }
     }
