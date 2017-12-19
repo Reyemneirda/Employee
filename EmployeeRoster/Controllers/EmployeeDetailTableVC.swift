@@ -98,7 +98,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
             dateFormatter.dateStyle = .medium
             dobLabel.text = dateFormatter.string(from: employee.dateOfBirth)
             dobLabel.textColor = .black
-            updateType()
+            employeeTypeLabel.text = employeeType?.description()
             employeeTypeLabel.textColor = .black
         } else {
             navigationItem.title = "New Employee"
@@ -106,8 +106,10 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
     }
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
         if let name = nameTextField.text {
-            employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
+            employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: employeeType!)
+            
             performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
         }
     }
