@@ -91,15 +91,21 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
     }
     
     func updateView() {
+        
         if let employee = employee {
             navigationItem.title = employee.name
             nameTextField.text = employee.name
+            nameTextField.font  = nameTextField.font?.withSize(20)
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dobLabel.text = dateFormatter.string(from: employee.dateOfBirth)
             dobLabel.textColor = .black
-            employeeTypeLabel.text = employeeType?.description()
+            dobLabel.font = dobLabel.font.withSize(44)
+            
+            employeeTypeLabel.text = employee.employeeType.description()
             employeeTypeLabel.textColor = .black
+            employeeTypeLabel.font  = employeeTypeLabel.font?.withSize(20)
         } else {
             navigationItem.title = "New Employee"
         }
