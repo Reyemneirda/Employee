@@ -67,7 +67,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         
         guard indexPath.row == dobPickerRow else {return defaultRowHeight}
         if isEditingBirthday {
-            return dobDatePicker.frame.height
+            return 216.0
         }
         return 0
     }
