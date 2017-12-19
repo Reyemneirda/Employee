@@ -105,7 +105,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
             
             employeeTypeLabel.text = employee.employeeType.description()
             employeeTypeLabel.textColor = .black
-            employeeTypeLabel.font  = employeeTypeLabel.font?.withSize(20)
+            employeeTypeLabel.font  = employeeTypeLabel.font?.withSize(19)
         } else {
             navigationItem.title = "New Employee"
         }
